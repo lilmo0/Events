@@ -14,7 +14,7 @@ h1 {
 }
 
 img {
-    width: auto;
+    width: fit-content;
     max-height: 50em;
 }
 
@@ -32,10 +32,10 @@ p {
 
 .sidenav {
     height: 0px;
-    width: 230px;
+    width: 10%;
     position: sticky;
     z-index: 1;
-    top: 0;
+    top: 55px;
     left: 0;
     background-color: transparent;
     padding-top: 20px;
@@ -46,28 +46,52 @@ p {
 
 }
 
-.sidenav a {
+.sidenav:hover {
+    height: 0px;
     width: 150px;
-    height: 150px;
+    position: sticky;
+    z-index: 1;
+    top: 55px;
+    left: 0;
+    background-color: transparent;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+
+}
+
+.sidenav a {
+    width: 55px;
+    height: 55px;
+    flex-grow: 1;
     background-color: #F9ECD3; 
+    opacity: .8;
     border-radius: 50%;
     display: flex;
     margin-bottom: 10px;
     align-items: center;
     justify-content: center;
     color: #565351;
-    transition: background-color 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out, color 0.3s ease-in-out;
+    font-size: xx-small;
+    transition: font-size 0.3s ease-in-out, 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .sidenav a:hover {
     width: 155px;
     height: 155px;
     background-color: #B17260;
+    flex-grow: 1;
+    opacity: 1;
+    left: 0px;
     border-radius: 50%;
     display: flex;
     margin-bottom: 10px;
     color: #565351;
-    transition: background-color 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out, color 0.3s ease-in-out;
+    font-size: x-large;
+    transition: font-size 0.3s ease-in-out, background-color 0.3s ease-in-out, width 0.3s ease-in-out, height 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 /* Split Content Box Stuff!!!! */
@@ -75,7 +99,6 @@ p {
     display: flex;
     margin-left: 10%;
     margin-right: 10%;
-    border-radius: 10px;
 }
 
 .split-container {
@@ -89,9 +112,12 @@ p {
     flex: 1;
     padding: 20px;
     box-sizing: border-box;
-    width: 50%;
     overflow: hidden;
     position: relative;
+}
+
+.box img {
+    width: 100%;
 }
 
 /* This is for the 3 space box */
@@ -116,28 +142,32 @@ p {
     gap: 10px;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     grid-template-rows: masonry;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .masonry { /* Masonry container */
     column-count: 3;
-    column-gap: 1em;
     margin-left: 10%;
     margin-right: 10%;
 }
 
 .item {
     overflow: hidden;
-    display: grid;
-    text-align: center;
-    margin: 0 0 1em;
-    width: 100%;
-    border-radius: 10px;
+    max-width: 100%;
+    margin-bottom: 1em;
  }
 
+.item img {
+    width: 100%;  /* Ensure the image takes up the full width of its container */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Remove any extra spacing or alignment issues */
+
+}
+
  .image {
-    vertical-align: bottom;
-    width: 100%;
-    opacity:.6;
+    max-width: 100%;
+    opacity: 1;
     transition: .5s ease;
  }
 
@@ -165,4 +195,34 @@ p {
 .item:hover .text {
     opacity: 0;
     transition: .5s ease;
+}
+@media only screen and (max-width: 767px) {
+   .masonry {
+        column-count: 1;
+        column-gap: 10px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .item {
+        margin: 5px;
+    }
+    .sidenav {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    /* Styles for screens between 768px and 1023px */
+    .masonry {
+        column-count: 2;
+        column-gap: 10px;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .item {
+        margin: 5px;
+    }
+    .sidenav {
+        display: none;
+    }
 }
