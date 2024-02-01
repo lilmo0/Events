@@ -203,6 +203,16 @@ ul {
     opacity: 1;
     transition: display .5s ease-in-out;
 }
+
+@media only screen and (max-width: 425px) {
+    .masonry {
+        display:flex !important;
+        overflow-x:scroll;
+    }
+    .masonry .item {
+        min-width: 100%;
+    }
+}
 @media only screen and (max-width: 599px) {
    .masonry {
         column-count: 1;
