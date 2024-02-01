@@ -204,7 +204,7 @@ ul {
     transition: display .5s ease-in-out;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 500px) {
     .masonry {
         display:flex !important;
         overflow-x:scroll;
