@@ -125,7 +125,8 @@ ul {
 
 .box img {
     width: 100%;
-    max-height: 30rem;
+    max-height: clamp(30rem,40vw,60rem);
+    object-fit: cover;
 }
 
 /* This is for the 3 space box */
