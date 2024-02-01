@@ -103,22 +103,23 @@ ul {
 /* Split Content Box Stuff!!!! */
 .split-content {
     display: flex;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 
 .split-container {
     display: flex;
     width: 100%;
-    max-height: 30em;
     overflow: hidden;
+    gap: 5%;
+    flex-wrap: wrap;
+    margin-inline: 10%;
+    margin-block: 2rem;
 }
 
 .box {
     flex: 1;
-    padding: 20px;
     box-sizing: border-box;
     overflow: hidden;
+    min-width: 300px;
     position: relative;
 }
 
@@ -200,12 +201,15 @@ ul {
     opacity: 1;
     transition: display .5s ease-in-out;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 599px) {
    .masonry {
         column-count: 1;
         column-gap: 10px;
         margin-left: 5%;
         margin-right: 5%;
+    }
+    .split-container {
+        margin-inline: 5%;
     }
     .item {
         margin: 5px;
@@ -220,13 +224,16 @@ ul {
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
+@media only screen and (min-width: 600px) and (max-width: 1023px) {
     /* Styles for screens between 768px and 1023px */
     .masonry {
         column-count: 2;
         column-gap: 10px;
         margin-left: 5%;
         margin-right: 5%;
+    }
+    .split-container {
+        margin-inline: 5%;
     }
     .item {
         margin: 5px;
