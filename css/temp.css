@@ -10,6 +10,7 @@ h1 {
     padding-top: 50px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
+    padding-bottom: 50px;
 
 }
 
@@ -167,41 +168,64 @@ ul {
 
 .item {
     overflow: hidden;
-    max-width: 100%;
+    width: 400px;
     margin-bottom: 1em;
     color: lightgrey;
+    display: flex;
+    position: relative;
  }
 
 .item img {
     width: 100%;  /* Ensure the image takes up the full width of its container */
     height: auto; /* Maintain the aspect ratio */
-    display: block; /* Remove any extra spacing or alignment issues */
+    position: relative; /* Remove any extra spacing or alignment issues */
     border-radius: 25px;
+    display: block;
 
 }
 
- .image {
+.image {
     max-width: 100%;
-    opacity: .85;
+    opacity: 1;
     transition: .5s ease;
     border-radius: 25px;
+    position: absolute;
+    display: flex;
+    align-items: center;
  }
 
- .text {
-    display: none;
-
+.text {
+    display: block;
+    opacity: 0;
+    position: absolute;
     transition: display .3s ease-in-out;
+    padding: 3% 5%;
+    bottom: 1%;
+    transition: opacity 0.3s ease;
  }
 
+/* .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.overlay:hover {
+    background-color: gray;
+    opacity: .6;
+    border-radius: 25px;
+} */
 
 .item:hover .image {
-    opacity: 1;
+    opacity: .6;
 }
 
 .item:hover .text {
     display: block;
     opacity: 1;
-    transition: display .5s ease-in-out;
+    transition: opacity .3s ease-in;
 }
 
 @media only screen and (max-width: 500px) {
