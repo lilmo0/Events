@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #020B29;
+    background-color: #050708;
 }
 h1 {
     color: darkgoldenrod;
@@ -33,6 +33,13 @@ ul {
     color: lightgrey;
     font-size: 16px;
 
+}
+
+/*Banner Image Stuff*/
+
+.banner {
+    width: 100%;
+    height: auto;
 }
 
 /* SideNav Bar Stuff!! */
@@ -168,7 +175,7 @@ ul {
 
 .item {
     overflow: hidden;
-    width: 400px;
+    width: 100%;
     margin-bottom: 1em;
     color: lightgrey;
     display: flex;
@@ -179,7 +186,7 @@ ul {
     width: 100%;  /* Ensure the image takes up the full width of its container */
     height: auto; /* Maintain the aspect ratio */
     position: relative; /* Remove any extra spacing or alignment issues */
-    border-radius: 25px;
+    border-radius: 2vw;
     display: block;
 
 }
@@ -188,7 +195,7 @@ ul {
     max-width: 100%;
     opacity: 1;
     transition: .5s ease;
-    border-radius: 25px;
+    border-radius: 2vw;
     position: absolute;
     display: flex;
     align-items: center;
@@ -228,7 +235,7 @@ ul {
     transition: opacity .3s ease-in;
 }
 
-@media only screen and (max-width: 500px) {
+/* @media only screen and (max-width: 500px) {
     .masonry {
         display:flex !important;
         overflow-x:scroll;
@@ -236,10 +243,12 @@ ul {
     .masonry .item {
         min-width: 100%;
     }
-}
+}*/
+
 @media only screen and (max-width: 599px) {
    .masonry {
-        column-count: 1;
+        column-count: 3;
+        column-width: 27%;
         column-gap: 10px;
         margin-left: 5%;
         margin-right: 5%;
@@ -258,6 +267,9 @@ ul {
     .sidenav {
         display: none;
     }
+
+    
+   
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1023px) {
@@ -281,4 +293,7 @@ ul {
     .sidenav {
         display: none;
     }
+    .banner {
+        position:relative;
+        }
 }
